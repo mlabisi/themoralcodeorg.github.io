@@ -1,7 +1,7 @@
 ---
 layout: page
-title: The MoraL Code
-subtitle: I'm dedicated to bringing empathy and passion to the Undergraduate Computer Science Major experience. Read on to learn about my philosophy.
+title: Mora Labisi
+subtitle: I'm a second-year PhD student and NSF CSGrad4US Fellow in the joint Computer Science and Learning Sciences program at Northwestern University, advised by Dr. Eleanor O'Rourke.
 sitemap:
   priority: 0.9
 ---
