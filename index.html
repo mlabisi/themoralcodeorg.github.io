@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mora Labisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;family=Space+Mono:wght@400;700&amp;display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .font-serif-main {
+            font-family: 'Crimson Pro', Georgia, serif;
+        }
+
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        .sticky-note {
+            transform: rotate(-2deg);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-note:nth-child(2) {
+            transform: rotate(1deg);
+        }
+
+        .sticky-note:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+    </style>
+    <style>@view-transition {
+        navigation: auto;
+    }</style>
+</head>
+<body class="h-full font-serif-main">
+<div id="app-wrapper" class="h-full w-full overflow-auto paper-texture" style="background-color: #FDF6E3;">
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 backdrop-blur-sm"
+         style="background-color: rgba(253, 246, 227, 0.95); border-bottom: 2px solid #E8DCC4;">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-mono text-sm font-bold" style="color: #5C4B37;"></span>
+            <div class="flex gap-4 md:gap-8">
+                <a id="cv-link" href="assets/pdf/Mora_Labisi_CV.pdf" target="_blank" rel="noopener noreferrer"
+                   class="font-mono text-sm transition-all hover:underline" style="color: #5C4B37;"> CV </a>
+                <a id="github-link" href="https://github.com/mlabisi" aria-label="Mora's GitHub" target="_blank" rel="noopener noreferrer"
+                   class="font-mono text-sm transition-all hover:underline" style="color: #5C4B37;"> GitHub </a>
+                <a id="linkedin-link" href="https://www.linkedin.com/in/mora-labisi/" aria-label="Mora's LinkedIn" target="_blank" rel="noopener noreferrer"
+                   class="font-mono text-sm transition-all hover:underline" style="color: #5C4B37;"> LinkedIn </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Header Section -->
+        <header class="text-center mb-16 relative">
+            <!-- Profile Picture Section -->
+            <div class="mb-8 flex justify-center">
+                <div class="relative inline-block">
+                    <!-- Decorative frame -->
+                    <div class="absolute -inset-4 rounded-3xl"
+                         style="background: linear-gradient(135deg, #E8DCC4 0%, #FCE7F3 100%); transform: rotate(-2deg);"></div>
+                    <!-- Picture container -->
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden"
+                         style="background-color: #FFFFFF; border: 3px solid #5C4B37;"><img id="profile-pic"
+                                                                                            src="/assets/img/rosehack.jpeg"
+                                                                                            alt="Mora presenting at Rose Hack 2019"
+                                                                                            class="w-full h-full object-cover"
+                                                                                            loading="lazy"
+                                                                                            onerror="console.error('Profile image failed to load:', this.src); this.style.background='linear-gradient(135deg, #E0E7FF 0%, #DBEAFE 100%)'; this.alt='Profile image unavailable';">
+                    </div>
+                    <!-- Corner decoration -->
+                    <div class="absolute -top-2 -right-2 text-2xl">
+                        👩🏾‍💻
+                    </div>
+                </div>
+            </div>
+            <!-- Name -->
+            <h1 id="main-name" class="text-5xl md:text-6xl font-semibold mb-4 tracking-tight" style="color: #2D3748;">
+                Mora Labisi</h1>
+            <!-- Tagline with cursor -->
+            <p id="tagline" class="text-xl md:text-2xl italic" style="color: #718096;">PhD Student · Northwestern
+                University</p>
+            <!-- Fun divider -->
+            <div class="mt-8 flex justify-center items-center gap-2" style="color: #A0AEC0;"><span>~</span> <span
+                    class="text-lg">✧</span> <span>~</span>
+            </div>
+        </header>
+        <!-- Research Section -->
+        <section class="mb-16">
+            <h2 class="font-mono text-sm uppercase tracking-widest mb-6 flex items-center gap-3"
+                style="color: #5C4B37;"><span style="background-color: #5C4B37; width: 30px; height: 2px;"></span>
+                Research</h2>
+            <div class="rounded-2xl p-8 md:p-10 relative" style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                <!-- Corner decoration -->
+                <div class="absolute -top-3 -right-3 text-2xl">
+                    📌
+                </div>
+                <h3 id="research-title" class="text-2xl md:text-3xl font-semibold mb-4" style="color: #2D3748;">
+                    Computer Science + Learning Sciences</h3>
+                <p id="research-description" class="text-lg leading-relaxed mb-6" style="color: #4A5568;">I'm a
+                    second-year PhD Student and <a href="https://www.nsf.gov/cise/graduate-fellowships"
+                                                   class="underline">NSF CSGrad4US Fellow</a> at Northwestern
+                    University, advised by <a
+                            href="http://www.eleanorourke.com/index.html" class="underline">Dr. Eleanor O'Rourke</a>. In
+                    my work, I focus on post-secondary Computer Science students and how they navigate the transition
+                    from academia to industry through things like internships, technical interview preparation, and
+                    other professional development practices.
+                    <br/>&nbsp;<br/>
+                    By understanding how students currently bridge this gap, I aim to design curriculum interventions
+                    that formalize and streamline their path—bringing industry practices and innovations back into the
+                    classroom.
+                    <br/>&nbsp;<br/>
+                    I'm also passionate about equipping students with skills AI can't replace: self-regulation,
+                    metacognition, and self-efficacy.</p>
+                <!-- Keywords as tags -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-full text-xs font-mono"
+                          style="background-color: #FEF3C7; color: #92400E;">Post-Secondary CS</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono"
+                          style="background-color: #DBEAFE; color: #1E40AF;">Academia-Industry Gap</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono"
+                          style="background-color: #FCE7F3; color: #9D174D;">Self-Regulation</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono"
+                          style="background-color: #efdec0; color: #754c02;">Metacognition</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono"
+                          style="background-color: #D1FAE5; color: #065F46;">Self-Efficacy</span>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="mb-16">
+            <h2 class="font-mono text-sm uppercase tracking-widest mb-6 flex items-center gap-3"
+                style="color: #5C4B37;"><span style="background-color: #5C4B37; width: 30px; height: 2px;"></span> About
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Main about card -->
+                <div class="rounded-2xl p-8 sticky-note" style="background-color: #E0F2FE;">
+                    <div class="font-mono text-3xl font-bold" style="color: #000000;" id="MoraL">
+                        The <span style="color: #0369A1;">MoraL</span> Code
+                    </div>
+                    <div class="text-sm" style="color: #4A5568;">
+                        Hi there, I'm Mora Labisi and I put the "Mora L" in The MoraL Code! As a child, my
+                        dad used my room as a storage space for his many PCs that he liked to tinker with when he
+                        had the time. As a result, I looked to the computer for entertainment, which in turn led to
+                        me creating webpages about dogs and making simple computer games. Despite my early exposure
+                        to the field, I never actually considered CS as a career. It was always simply a fun hobby
+                        for me—tweaking Tumblr themes in HTML/CSS and keeping up with advancements in tech. In fact,
+                        the idea of CS as a career didn't really hit me until I was applying for college back in
+                        2015. I applied to Cal Poly Pomona's CS program, self-studied Java, and never looked back! After
+                        graduating from Cal Poly Pomona with my Bachelor's Degree in CS, I spent a little over four
+                        years crafting code and systems as
+                        a Software Engineer at Starbucks.
+                    </div>
+                </div>
+                <!-- Mini cards -->
+                <div class="space-y-4">
+                    <div class="rounded-xl p-5 sticky-note" style="background-color: #FEE2E2;">
+                        <div class="font-mono text-3xl font-bold" style="color: #000000;">
+                            The MoraL <span style="color: #DC2626;">Code</span>
+                        </div>
+                        <div class="text-sm" style="color: #4A5568;">
+                            CS students learn algorithms and data structures in the classroom, but professional
+                            programming
+                            requires a different set of skills: problem-solving under pressure, communicating your
+                            thought
+                            process, and navigating ambiguous questions. Many students bridge this gap on their own
+                            through LeetCode grinding, side projects, and mock interviews. My research asks: what if we
+                            formalized this?
+                            What would it look like to integrate industry-readiness into the curriculum instead of
+                            leaving students to figure it out alone?
+                        </div>
+                    </div>
+                    <div class="rounded-xl p-5 sticky-note" style="background-color: #D1FAE5;">
+                        <div class="font-mono text-3xl font-bold" style="color: #000000;">
+                            The <span style="color: #059669;">MoraL Code</span>
+                        </div>
+                        <div class="text-sm" style="color: #4A5568;">
+                            Typically referring to how we treat each other, a moral code sets the ground rules
+                            for how to live life in a morally sound way. My ultimate goal is to become a teaching-track
+                            CS professor bring empathy and passion to
+                            Computer Science—especially when it comes to supporting female Computer Science majors.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Publications / Work -->
+        <section class="mb-16">
+            <h2 class="font-mono text-sm uppercase tracking-widest mb-6 flex items-center gap-3"
+                style="color: #5C4B37;"><span style="background-color: #5C4B37; width: 30px; height: 2px;"></span>
+                Selected Work</h2>
+            <div class="space-y-4">
+                <a href="assets/pdf/internship.pdf" class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"Making the Most of a SWE
+                                Internship"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+                <a href="assets/pdf/apis.pdf" class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"The Beginner’s Guide to
+                                APIs"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+                <a href="assets/pdf/devEnv.pdf" class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"The Developer
+                                Environment"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+                <a href="assets/pdf/devWorkflow.pdf" class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"The Developer Workflow"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+                <a href="assets/pdf/sdlc.pdf" class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"The Software Development
+                                Cycle"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+                <a href="assets/pdf/thinkingCritically.pdf"
+                   class="block rounded-xl p-6 transition-all hover:translate-x-2"
+                   style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1" style="color: #2D3748;">"Thinking Critically as a
+                                SWE"</h3>
+                            <p class="text-sm" style="color: #718096;">Resource Guide</p>
+                        </div>
+                        <span class="text-xl">📄</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="mb-12">
+            <h2 class="font-mono text-sm uppercase tracking-widest mb-6 flex items-center gap-3"
+                style="color: #5C4B37;"><span style="background-color: #5C4B37; width: 30px; height: 2px;"></span> Get
+                In Touch</h2>
+            <div class="rounded-2xl p-8 text-center" style="background-color: #FFFFFF; border: 2px solid #E8DCC4;">
+                <p class="text-lg mb-6" style="color: #4A5568;">Interested in post-secondary CS education? Let's
+                    connect!</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span
+                            class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono text-sm transition-all hover:scale-105 cursor-default"
+                            style="background-color: #E8DCC4; color: #5C4B37;">
+                        ✉️ moralabisi [at] u [dot] northwestern [dot] edu </span>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="text-center py-8 font-mono text-sm" style="color: #A0AEC0;">
+            <p class="mt-2"> Last updated: January 2026</p>
+        </footer>
+    </div>
+</div>
